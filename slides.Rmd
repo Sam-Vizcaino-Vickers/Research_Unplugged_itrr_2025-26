@@ -1,0 +1,149 @@
+---
+title: "Research Unplugged: Introduction to R & RStudio"
+author: |
+  | Sam J. Vizcaino Vickers
+  | Psychology Technician 
+  | Department of Psychology, Wrexham University
+  |
+  | \faEnvelopeO \  \texttt{sam.vickers@wrexham.ac.uk}
+  | \faEnvelopeO \  \texttt{psychology.technician@wrexham.ac.uk}
+fontsize: 8pt
+output:
+ beamer_presentation:
+  keep_tex: false
+  fonttheme: "serif"
+  includes:
+   in_header: preamble2.tex
+editor_options: 
+  chunk_output_type: console
+csl: apa.csl
+---
+
+```{r, include = FALSE}
+# Package Setup --------------
+library(MASS)
+library(tidyverse)
+```
+
+# What is R?
+
+- Open-source language designed for **statistical computing, analysis and open science.**
+
+- Extensive Package Ecosystem: features over 20,000 packages (via [CRAN](https://cran.r-project.org/)) that allow users to perform several different statistical models and visualisations.
+
+- Renowned for its ability to produce high quality graphics and interactive web apps
+
+# What is RStudio?
+
+- It is an integrated development environment (IDE)
+- Built for Data Science
+- Workspace for Scripting, academic Manuscripts, Presentations, and more...
+
+# Alternatives?
+
+- What about alternative programs such Python, SPSS, SAS, Stata, Minitab, Matlab, Maple, Mathematica, Tableau, Excel, SQL and many others) come down to 3 inter-related factors:
+
+  - It is immensely powerful
+
+  - Open source
+
+  - Very and increasingly widely used
+
+- Positron (IDE)
+
+  - New upcoming IDE
+
+  - Worth it?
+
+# Essential Concepts
+
+- Data Wrangling
+
+- Data Visualisation
+
+- Quarto
+
+- Statistics
+
+# What are we going to learn today
+
+- *Guided tour of RStudio*
+
+  - Calling R packages, functions, variables etc.
+
+- *First Steps in R*
+
+- Basic Data visualisations
+
+# Histograms
+
+```{r, echo=FALSE, warning=FALSE}
+ggplot(anorexia, 
+       mapping = aes(x = Prewt, fill = )) +
+  geom_histogram(binwidth= 1.80)
+```
+
+# Frequency Polygons
+
+```{r, echo=FALSE, warning=FALSE}
+ggplot(anorexia, 
+       mapping = aes(x = Prewt)
+) + geom_freqpoly(binwidth = 2.54, colour = "red")
+```
+
+# Density Plots
+
+```{r, echo=FALSE, warning=FALSE}
+ggplot(anorexia, 
+       mapping = aes(x = Prewt)
+) + geom_density()
+```
+
+# Bar Plots
+
+```{r, echo=FALSE, warning=FALSE}
+ggplot(anorexia, 
+       mapping = aes(x = Treat, fill = Treat)
+       ) + geom_bar()
+```
+
+# Scatter Plot
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
+ggplot(mtcars, aes(x = wt, y = mpg)) + 
+  geom_point(alpha = 0.5) + 
+  geom_smooth(method = "lm", se = FALSE, colour = "red") + 
+  labs(
+    title = "Car Weight vs Fuel Efficiency", 
+    x = "Weight (1,000 lbs)", 
+    y = "Miles Per Gallon (MPG)"
+  ) + 
+  theme_minimal()
+
+```
+
+# Growth Curve Plots
+
+```{r, echo=FALSE, warning=FALSE}
+ggplot(ChickWeight, aes(x = Time, y = weight, group = Chick, color = Diet)) +
+  geom_line(alpha = 0.5) +
+  geom_point() +
+  theme_minimal()
+```
+
+# Facet Plots
+
+```{r, echo=FALSE, warning=FALSE, message = FALSE}
+
+ChickWeight
+ggplot(ChickWeight, aes(x = Time, y = weight, group = Chick, colour = Diet)) +
+  geom_line() +
+  geom_point() +
+  facet_wrap(~ Chick) +
+  labs(x = "Time", y = "weight") +
+  theme_bw()
+```
+
+# Psychology Students
+
+For any psychology Students who wish to learn more about R and RStudio then do book a session with us on the [Booking System](https://outlook.office.com/book/PsychTechWrexham@MAILGLYNDWRAC.onmicrosoft.com/?ismsaljsauthenabled){.uri}.
