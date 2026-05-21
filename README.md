@@ -12,7 +12,7 @@ This session is aimed at anyone who is interested in using R and RStudio for dat
 
 ## Teaching Format 
 
-The session will be a workshop based and will be conducted on the 21st May 2026 between 10:00-10:30 (UK Local Time; Greenwich Mean Time; UTC+0). There will be a few minutes at the end for a Q&A for any remaining questions. 
+The session will be a workshop based and will be conducted on the 21st May 2026 between 10:00-10:30 (_UK Local Time; Greenwich Mean Time; UTC+0_). There will be a few minutes at the end for a Q&A for any remaining questions. 
 
 Teaching will be done via Microsoft Teams and invites will be sent to staff and PhD Students who are signed up to the Research Unplugged emails. The session will be recorded and made available and the session will be saved in a OneDrive folder accessible upon request. 
 
